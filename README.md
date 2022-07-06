@@ -54,6 +54,9 @@ local Embed = rWebhook.MessageEmbed()
 
 local Success, Response = rWebhook:Send({content = "This is additional text!", embeds = {Embed}})
 ```
+<p>
+  <a href=""><img src="images/ExampleEmbed.png" alt="Example Embed"></a>
+</p>
 
 ## Links
 - [Discord.js guide](https://discordjs.guide/popular-topics/embeds.html#embed-preview)
