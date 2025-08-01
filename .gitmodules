@@ -1,0 +1,6 @@
+[submodule "dependency/Promise"]
+	path = dependency/Promise
+	url = https://github.com/evaera/roblox-lua-promise.git
+[submodule "dependency/HttpWrapper"]
+	path = dependency/HttpWrapper
+	url = https://github.com/OssieNomae/HttpWrapper.git
