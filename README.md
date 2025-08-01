@@ -1,16 +1,15 @@
 ## About
 rWebhook is a roblox to discord Webhook wrapper emulating methods of discord.js
-
 - Ease of use
-- Built in rate limiting
+- Built in rate limiting & retries
 - Supports different proxies
-- Object-oriented
 
 ## Methods
 ```
 rWebhook(Url) -- Returns a 'rWebhook' object
 		
 rWebhook.MessageEmbed() -- Returns an 'Embed' object
+Webhook.MessageEmbed() -- Returns an 'Embed' object
 
 Embed.
 - setTitle(string)
@@ -32,25 +31,25 @@ Embed.
 
 ## Example usage
 ```lua
-local rWebhook = require(rWebhook.Module.Location)("https://discord.com/api/webhooks/xxxxxxxxxxxx/xxxxxxxxxxxx")
+local rWebhook = require(rWebhook.Module.Location).new("https://discord.com/api/webhooks/xxxxxxxxxxxx/xxxxxxxxxxxx")
 		
 local Embed = rWebhook.MessageEmbed()
-  .setColor('#0099ff')
-  .setTitle('Test Embed')
-  .setURL('https://discord.js.org/')
-  .setAuthor({ name = 'Some name', iconURL = 'https://i.imgur.com/AfFp7pu.png', url = 'https://discord.js.org' })
-  .setDescription('Some description here')
-  .setThumbnail('https://i.imgur.com/AfFp7pu.png')
-  .addFields({
+  :setColor('#0099ff')
+  :setTitle('Test Embed')
+  :setURL('https://discord.js.org/')
+  :setAuthor({ name = 'Some name', iconURL = 'https://i.imgur.com/AfFp7pu.png', url = 'https://discord.js.org' })
+  :setDescription('Some description here')
+  :setThumbnail('https://i.imgur.com/AfFp7pu.png')
+  :addFields({
     { name = 'Regular field title', value = 'Some value here' },
     { name = "\u{200B}", value = "\u{200B}" },
     { name = 'Inline field title', value = 'Some value here', inline = true },
     { name = 'Inline field title', value = 'Some value here', inline = true },
   })
-  .addField('Inline field title', 'Some value here', true)
-  .setImage('https://i.imgur.com/AfFp7pu.png')
-  .setTimestamp()
-  .setFooter({ text = 'Some footer text here', iconURL = 'https://i.imgur.com/AfFp7pu.png' });
+  :addField('Inline field title', 'Some value here', true)
+  :setImage('https://i.imgur.com/AfFp7pu.png')
+  :setTimestamp()
+  :setFooter({ text = 'Some footer text here', iconURL = 'https://i.imgur.com/AfFp7pu.png' });
 
 local Success, Response = rWebhook:Send({content = "This is additional text!", embeds = {Embed}})
 ```
