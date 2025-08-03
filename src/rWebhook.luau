@@ -41,7 +41,7 @@
 	local rWebhook = require(rWebhook.Module.Location)
 	local Webhook = rWebhook.new("https://discord.com/api/webhooks/xxxxxxxxxxxx/xxxxxxxxxxxx")
 	
-	local Embed = Webhook.MessageEmbed()
+	local Embed = Webhook.EmbedBuilder()
 		:setColor('#0099ff')
 		:setTitle('Test Embed')
 		:setURL('https://discord.js.org/')
